@@ -1,4 +1,4 @@
-name: freesplat
+name: splattalk
 channels:
   - pytorch
   - dglteam/label/th21_cu121
@@ -128,7 +128,7 @@ dependencies:
       - distributed==2024.11.2
       - distributed-ucxx-cu12==0.41.0
       - docker-pycreds==0.4.0
-      - e3nn==0.5.4
+      - e3nn==0.5.5
       - einops==0.8.0
       - faiss-gpu==1.7.2
       - fastrlock==0.8.3
@@ -253,4 +253,4 @@ dependencies:
       - yarl==1.18.3
       - zict==3.0.0
       - zipp==3.21.0
-prefix: /coc/flash6/athai6/miniconda3/envs/freesplat
+prefix: /path/to/miniconda/splattalk
