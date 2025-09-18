@@ -18,7 +18,6 @@ from .visualization.encoder_visualizer_epipolar_cfg import EncoderVisualizerEpip
 from .modules.networks import CVEncoder, DepthDecoder
 from .modules.cost_volume import AVGFeatureVolumeManager
 import torch.nn.functional as F
-from .gaussian_database import Database
 
 
 import timm
