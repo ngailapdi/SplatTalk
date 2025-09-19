@@ -1,4 +1,6 @@
-# Installation
+# SplatTalk: 3D VQA with Gaussian Splatting
+
+## Installation
 
 To get started, create a virtual environment using the provided `environment.yml` file:
 
@@ -20,7 +22,7 @@ The Gaussian splatting CUDA code (`diff-gaussian-rasterization`) must be compile
 - Install a version of PyTorch that was built using your CUDA version. For example, to get PyTorch with CUDA 11.8, use the following command (more details [here](https://pytorch.org/get-started/locally/)):
 
 ```bash
-pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
 ```
 
 - Install CUDA Toolkit 12.X on your system. One approach (*try this at your own risk!*) is to install a second CUDA Toolkit version using the `runfile (local)` option. For instance, to install CUDA Toolkit 12.1, download from [here](https://developer.nvidia.com/cuda-12-1-0-download-archive?target_os=Linux&target_arch=x86_64&Distribution=Ubuntu&target_version=22.04&target_type=runfile_local). When you run the installer, disable the options that install GPU drivers and update the default CUDA symlinks. If you do this, you can point your system to CUDA 12.1 during installation as follows:
@@ -32,39 +34,41 @@ LD_LIBRARY_PATH=/usr/local/cuda-12.1/lib64 pip install git+https://github.com/dc
 ```
 </details>
 
-# Acquiring Datasets
+## Acquiring Datasets
 
-SplatTalk is trained using about scenes from [ScanNet](http://www.scan-net.org).
+SplatTalk is trained using scenes from [ScanNet](http://www.scan-net.org).
 
 The downloaded dataset under path ```datasets/``` should look like:
 ```
 datasets
 ├─ scannet
 │  ├─ train
-│  ├  ├─scene0005_00
+│  ├  ├─sceneXXXX_XX
 |  ├  ├  ├─ color (RGB images)
 │  ├  ├  ├─ depth (depth images)
 │  ├  ├  ├─ intrinsic (intrinsics)
 │  ├  ├  └─ extrinsics.npy (camera extrinsics)
-│  ├  ├─ scene0020_00
+│  ├  ├─ sceneYYYY_YY
 │  ├  ...
 │  ├─ test
 │  ├  ├─
 │  ├  ...
 │  ├─ train_idx.txt (training scenes list)
 │  └─ test_idx.txt (testing scenes list)
-├─ replica
-│  ├─ test
-│  └─ test_idx.txt (testing scenes list)
+└─
+```
+To obtain `extrinsics.npy` from the raw ScanNet data, run
+```
+python convert_poses.py
 ```
 
-# Acquiring Pre-trained Checkpoints
+## Acquiring Pre-trained Checkpoints
 
 TODO.
 
-# Running the Code
+## Running the Code
 
-## Training
+### Training
 
 The main entry point is `src/main.py`. To train on 100 views, run the following command:
 
@@ -78,7 +82,7 @@ python -m src.main +experiment=scannet/fvt +output_dir=train_fvt_full_100v datas
 The output will be saved in path ```outputs/<output_dir>```.
 
 
-## Evaluation
+### Evaluation
 
 To evaluate pre-trained model on the ```[N]```-views setting on ```[DATASET]```, you can call:
 
@@ -87,7 +91,7 @@ python -m src.main +experiment=scannet/fvt +output_dir=[OUTPUT_PATH] mode=test d
 ```
 
 
-# BibTeX
+## BibTeX
 If you find our work helpful, please consider citing our paper. Thank you!
 ```
 @article{thai2025splattalk,
@@ -98,6 +102,6 @@ If you find our work helpful, please consider citing our paper. Thank you!
 }
 ```
 
-# Acknowledgements
+## Acknowledgements
 
-Our code is largely based on [FreeSplat](https://github.com/wangys16/FreeSplat). Thanks for their great works!
+Our code is largely based on [FreeSplat](https://github.com/wangys16/FreeSplat). Thanks for their great work!
