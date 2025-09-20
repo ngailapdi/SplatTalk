@@ -81,6 +81,7 @@ python -m src.main +experiment=scannet/fvt +output_dir=train_fvt_full_100v datas
 ```
 The output will be saved in path ```outputs/<output_dir>```.
 
+We trained our model using one H100 GPU for 7 days.
 
 ### Evaluation
 
