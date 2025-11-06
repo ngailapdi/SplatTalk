@@ -64,7 +64,7 @@ python convert_poses.py
 
 ## Acquiring Pre-trained Checkpoints
 
-TODO.
+Pre-trained weights for the self-supervised/zero-shot model can be found [here](https://drive.google.com/file/d/1jm90LpJ4N5ROA6pDchdzwRc5it6UNR8L/view?usp=sharing)
 
 ## Running the Code
 
