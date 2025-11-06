@@ -90,7 +90,8 @@ To evaluate pre-trained model on the ```[N]```-views setting on ```[DATASET]```,
 ```bash
 python -m src.main +experiment=scannet/fvt +output_dir=[OUTPUT_PATH] mode=test dataset/view_sampler=evaluation checkpointing.load=[PATH_TO_CHECKPOINT] dataset.view_sampler.num_context_views=[N]
 ```
-
+## Downstream 3D VQA Task
+Please refer to [SplatTalk-LLaVA-Inference](https://github.com/ngailapdi/SplatTalk-LLaVA-Inference/) codebase for instructions.
 
 ## BibTeX
 If you find our work helpful, please consider citing our paper. Thank you!
