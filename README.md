@@ -68,6 +68,10 @@ Pre-trained weights for the self-supervised/zero-shot model can be found [here](
 
 Pre-trained weights for the autoencoder can be found [here](https://drive.google.com/file/d/1aP3bjwt5xI8GUcG4dWouerNTsRaFrssy/view?usp=sharing)
 
+Finetuned model on ScanQA can be found [here](https://drive.google.com/drive/folders/1OeLrwHJPLv8tiO3QegzJTUBLX3z4lwFO?view?usp=sharing)
+
+Finetuned model on ScanQA and SQA3D can be found [here](https://drive.google.com/drive/folders/1aIgFu0axAnCnNrGILwR1Eyr72qGyqtFf?usp=sharing)
+
 ## Running the Code
 
 ### Training
