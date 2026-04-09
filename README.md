@@ -61,6 +61,8 @@ To obtain `extrinsics.npy` from the raw ScanNet data, run
 ```
 python convert_poses.py
 ```
+### Obtaining Language Features
+To extract the 3584-dimensional LLaVA-OV features, please refer to [SplatTalk-LLaVA-Inference](https://github.com/ngailapdi/SplatTalk-LLaVA-Inference/). The 256-dimensional features used for training are obtained by passing the LLaVA-OV features through the autoencoder in the `autoencoder` folder.
 
 ## Acquiring Pre-trained Checkpoints
 
